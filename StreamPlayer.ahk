@@ -190,15 +190,23 @@ SaveGeometry() {
 SaveWindowPosition() {
     global mpv_x, mpv_y, mpv_width, mpv_height
     if WinExist("StreamPlayer") {
-        WinGetPos, mpv_x, mpv_y, mpv_width, mpv_height, StreamPlayer
+        WinGet, hwnd, ID, StreamPlayer
+        VarSetCapacity(rect, 16, 0)
+        if DllCall("GetClientRect", "ptr", hwnd, "ptr", &rect) {
+            ; Convert client coordinates to screen coordinates
+            DllCall("ClientToScreen", "ptr", hwnd, "ptr", &rect)
+            mpv_x := NumGet(rect, 0, "Int"), mpv_y := NumGet(rect, 4, "Int")
+            mpv_width := NumGet(rect, 8, "Int"), mpv_height := NumGet(rect, 12, "Int")
+        } else {
+            ; Fallback to default values
+            mpv_x := 10, mpv_y := 10, mpv_width := 480, mpv_height := 270
+        }
     } else {
-        mpv_x := 10
-        mpv_y := 10
-        mpv_width := 480
-        mpv_height := 270
+        mpv_x := 10, mpv_y := 10, mpv_width := 480, mpv_height := 270
     }
-    SaveGeometry()  ; Save to the registry
+    SaveGeometry()
 }
+
 
 
 ;——————————————————————————————————————————————————————————————————————————————————————————————————————————
