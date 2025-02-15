@@ -3,6 +3,8 @@
 Tray-based video player using mpv and yt-dlp for streaming video content.
     - mpv: https://mpv.io/
     - yt-dlp: https://github.com/yt-dlp/yt-dlp
+Actually, you only **need two executable files**: **yt-dlp.exe** and **mpv.exe**. 
+Place them either in the same folder as StreamPlayer or in any directory included in your system's PATH.
 
  HOW IT WORKS:
  1. Command-Line Support:
