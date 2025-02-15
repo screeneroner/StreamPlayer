@@ -21,3 +21,5 @@ Tray-based video player using mpv and yt-dlp for streaming video content.
 	- The `.lst` file may be located anywhere. Use full path to point it in the command line during launch.
     - Each line should have the format: `MenuItemName | URL`
     - Lines without a `|` are treated as comments and ignored.
+
+Note: If you have concerns about suspicious actions from the pre-built executable, feel free to review the source code and compile it yourself.
