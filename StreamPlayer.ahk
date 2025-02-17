@@ -40,6 +40,11 @@ You can also customize your stream list, toggle MPV’s Always On Top mode, or k
 for a distraction-free experience. Your last window position and size are always remembered, 
 so the player launches exactly where you left it.
 
+You may even play stream as a live wallpaper on your desktop:
+- select stream to play
+- doubleclick on video to toggle fullscreen mode (or press 'f' key)
+- select in the system tray menu On Desktop. If the fullscreen video covers system tray - press the 'Win' key to bring tray on top.
+
 Simple, lightweight, and efficient—just the way a streaming tool should be.
 
 
